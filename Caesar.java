@@ -14,13 +14,14 @@ public class Caesar{
 			String text=sc.nextLine();
 			System.out.print("[?]Enter your key :");
 			int key=sc.nextInt();
-			encrypt(text,key);
+			System.out.println("[!]Encrypted Text :"+encrypt(text,key));
+			
 		}else{
 			System.out.print("[?]Enter your text to decrypt :");
 			String text=sc.nextLine();
 			System.out.print("[?]Enter your key :");
 			int key=sc.nextInt();
-			decrypt(text,key);
+			System.out.println("[!]Decrypted Text :"+decrypt(text,key));
 		}
 
 	}
@@ -34,10 +35,10 @@ public class Caesar{
 	}
 
 	public static String decrypt(String text,int key){
-		String encryptedText="";
+		String decryptedText="";
 		for(int i=0;i<text.length();i++){
-			encryptedText+=(char)((text.charAt(i)-(key%26)-'A')%26 + 'A');
+			decryptedText+=(char)((text.charAt(i)-(key%26)-'A')%26 + 'A');
 		}
-		return encryptedText;
+		return decryptedText;
 	}
 }
