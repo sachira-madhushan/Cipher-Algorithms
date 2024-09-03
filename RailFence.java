@@ -3,7 +3,7 @@ public class RailFence{
 
 	public static void main(String[] arg){
 		Scanner sc=new Scanner(System.in);
-		System.out.println("[?]Select your option(Encypt-0 | Decrypt-1) :");
+		System.out.print("[?]Select your option(Encypt-0 | Decrypt-1) :");
 		
 		int option=sc.nextInt();
 		sc.nextLine();

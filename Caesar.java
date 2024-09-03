@@ -5,7 +5,7 @@ public class Caesar{
 
 		Scanner sc=new Scanner(System.in);
 
-		System.out.println("[?]Select your option(Encypt-0 | Decrypt-1) :");
+		System.out.print("[?]Select your option(Encypt-0 | Decrypt-1) :");
 		
 		int option=sc.nextInt();
 		sc.nextLine();
@@ -29,7 +29,14 @@ public class Caesar{
 	public static String encrypt(String text,int key){
 		String encryptedText="";
 		for(int i=0;i<text.length();i++){
-			encryptedText+=(char)((text.charAt(i)+key-'A')%26 + 'A');
+			if(Character.isUpperCase(text.charAt(i))){
+				encryptedText+=(char)((text.charAt(i)+key-'A')%26 + 'A');
+			}else if(Character.isLowerCase(text.charAt(i))){
+				encryptedText+=(char)((text.charAt(i)+key-'a')%26 + 'a');
+			}else{
+				encryptedText+=text.charAt(i);
+			}
+			
 		}
 		return encryptedText;
 	}
@@ -37,7 +44,14 @@ public class Caesar{
 	public static String decrypt(String text,int key){
 		String decryptedText="";
 		for(int i=0;i<text.length();i++){
-			decryptedText+=(char)((text.charAt(i)-(key%26)-'A')%26 + 'A');
+			if(Character.isUpperCase(text.charAt(i))){
+				decryptedText+=(char)((text.charAt(i)-(key%26)-'A')%26 + 'A');
+			}else if(Character.isLowerCase(text.charAt(i))){
+				decryptedText+=(char)((text.charAt(i)-(key%26)-'a')%26 + 'a');
+			}else{
+				decryptedText+=text.charAt(i);
+			}
+			
 		}
 		return decryptedText;
 	}
