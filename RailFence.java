@@ -12,13 +12,14 @@ public class RailFence{
 			String text=sc.nextLine();
 			System.out.print("[?]Enter your key :");
 			int key=sc.nextInt();
-			encrypt(text,key);
+			System.out.println("[!]Encrypted Text :"+encrypt(text,key));
 		}else{
 			System.out.print("[?]Enter your text to decrypt :");
 			String text=sc.nextLine();
 			System.out.print("[?]Enter your key :");
 			int key=sc.nextInt();
-			decrypt(text,key);
+			System.out.println("[!]Decrypted Text :"+decrypt(text,key));
+			
 		}
 
 	}
@@ -71,7 +72,7 @@ public class RailFence{
 
 	}
 
-	public static void decrypt(String text,int key){
+	public static String decrypt(String text,int key){
 		String[][] fence=new String[key][text.length()];
 		String decryptedText="";
 		for(int i=0;i<key;i++){
